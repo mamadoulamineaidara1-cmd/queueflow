@@ -1,0 +1,345 @@
+/* ===========================
+   SYSTÈME BADGE UNIQUE
+   Remplace : .status, .online-badge, .service-status, .role-badge
+   Usage : <span class="badge success">Actif</span>
+=========================== */
+
+.badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.badge.primary {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.badge.success {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.badge.warning {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.badge.danger {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* ===========================
+   MODAL OVERLAY (BASE)
+   Pour profil : ajoute class "profile-modal"
+   Pour autres : juste class "modal-overlay"
+=========================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-overlay.active,
+.modal-overlay.show {
+    display: flex;
+}
+
+/* Animation commune */
+
+.modal-overlay .modal-content,
+.modal-overlay .modal-box {
+    animation: modalIn .3s ease;
+}
+
+@keyframes modalIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ===========================
+   MODAL GÉNÉRIQUE
+   (ajouter, modifier, supprimer)
+=========================== */
+
+.modal-box {
+    width: 500px;
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    color: #0f172a;
+}
+
+.close-modal {
+    font-size: 28px;
+    cursor: pointer;
+    color: #64748b;
+    transition: .2s;
+}
+
+.close-modal:hover {
+    color: #ef4444;
+}
+
+/* ===========================
+   FORMULAIRES COMMUNS
+=========================== */
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    transition: .3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+/* ===========================
+   BOUTONS COMMUNS
+=========================== */
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: .3s;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+.btn-cancel {
+    border: none;
+    background: #e2e8f0;
+    color: #0f172a;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.btn-cancel:hover {
+    background: #cbd5e1;
+}
+
+.btn-save {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.btn-save:hover {
+    background: #1d4ed8;
+}
+
+.btn-danger {
+    border: none;
+    background: #dc2626;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+}
+
+.btn-danger-soft {
+    border: none;
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: .3s;
+}
+
+.btn-danger-soft:hover {
+    background: #fecaca;
+}
+
+/* ===========================
+   PROFILE MODAL (spécifique)
+=========================== */
+
+.profile-modal .modal-content {
+    width: 380px;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    position: relative;
+}
+
+.profile-modal .close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 30px;
+}
+
+.modal-profile {
+    text-align: center;
+}
+
+.modal-profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.modal-profile h2 {
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.modal-profile p {
+    color: #64748b;
+    margin-bottom: 15px;
+}
+
+.mini-info {
+    margin-top: 15px;
+    text-align: left;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.mini-info p {
+    margin-bottom: 8px;
+}
+
+.dot-online {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.modal-actions {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* ===========================
+   ALERTES PAGE
+   (utilisés par agents, services, tickets)
+=========================== */
+
+.alert-danger {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.alert-success {
+    background: #dcfce7;
+    color: #166534;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}

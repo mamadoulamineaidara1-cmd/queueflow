@@ -1,0 +1,22 @@
+/* ===========================
+   AGENT - SIDEBAR LOGO OVERRIDE
+   L'admin utilise h2 + span
+   L'agent utilise i + span
+=========================== */
+
+.sidebar .logo {
+    text-align: center;
+}
+
+.sidebar .logo i {
+    font-size: 32px;
+    color: white;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.sidebar .logo span {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}

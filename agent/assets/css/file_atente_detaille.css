@@ -1,0 +1,247 @@
+/* ===========================
+   FILE D'ATTENTE - HEADER
+=========================== */
+
+.header-ligne {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.queue-header h2 {
+    color: #0f172a;
+    margin-bottom: 5px;
+}
+
+.queue-header p {
+    color: #64748b;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #16a34a;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.live-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #16a34a;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .4; }
+}
+
+/* ===========================
+   FILE D'ATTENTE - STATS
+=========================== */
+
+.queue-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.queue-stat-card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+}
+
+.queue-stat-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 14px;
+    background: #eff6ff;
+    color: #2563eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.queue-stat-card h3 {
+    color: #0f172a;
+    margin-bottom: 5px;
+}
+
+.queue-stat-card p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* ===========================
+   FILE D'ATTENTE - RECHERCHE
+=========================== */
+
+.queue-search {
+    background: white;
+    border-radius: 15px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+    margin-bottom: 25px;
+}
+
+.queue-search i {
+    color: #64748b;
+}
+
+.queue-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #0f172a;
+}
+
+/* ===========================
+   FILE D'ATTENTE - TICKET ROW
+=========================== */
+
+.ticket-row {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .08);
+    transition: .3s;
+}
+
+.ticket-row:hover {
+    transform: translateY(-2px);
+}
+
+.ticket-row.priority-ticket {
+    border-left: 5px solid #dc2626;
+}
+
+.ticket-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.ticket-number {
+    width: 65px;
+    height: 65px;
+    border-radius: 15px;
+    background: #eff6ff;
+    color: #2563eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.ticket-left h4 {
+    color: #0f172a;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.ticket-left p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.ticket-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.waiting-badge {
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ===========================
+   FILE D'ATTENTE - BOUTONS ACTIONS
+=========================== */
+
+.call-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.call-btn:hover {
+    background: #1d4ed8;
+}
+
+.hold-btn {
+    background: #f59e0b;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.hold-btn:hover {
+    background: #d97706;
+}
+
+.done-btn {
+    background: #16a34a;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.done-btn:hover {
+    background: #15803d;
+}
+
+/* Ticket actuellement en cours dans la liste */
+.ticket-row.active-ticket {
+    border-left: 5px solid #2563eb;
+    background: #eff6ff;
+}
+
+/* Conteneur pour centrer le message vide */
+.queue-list-container {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+}
